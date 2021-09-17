@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
-import styled from "styled-components";
-import VanillaTilt from "vanilla-tilt";
+import { useEffect, useRef } from 'react';
+import styled from 'styled-components';
+import VanillaTilt from 'vanilla-tilt';
 
 const CreditCard = () => {
   const card1 = useRef(null);
@@ -11,7 +11,7 @@ const CreditCard = () => {
       max: 25,
       speed: 400,
       glare: true,
-      "max-glare": 1,
+      'max-glare': 1,
     });
   }, [card1, card2]);
 
@@ -21,7 +21,7 @@ const CreditCard = () => {
         <CardContent>
           <Debit>Debit Card</Debit>
           <Bank>Jameshanbank</Bank>
-          <Chip src="/images/chip.png" />
+          <Chip src='/images/chip.png' />
           <Number>0123 4567 8910 1112</Number>
           <Valid>
             <span>
@@ -35,7 +35,7 @@ const CreditCard = () => {
         </CardContent>
       </Card>
       <Card ref={card2}>
-        <CardContent>
+        <CardContent backSide>
           <BlackBar />
           <CcvText>
             <h5>Authorized Signature-not valid unless signed</h5>
@@ -149,7 +149,7 @@ const Number = styled.h3`
   letter-spacing: 6px;
   font-size: 18px;
   text-shadow: 0 2px 1px #0005;
-  font-family: "Orbitron", sans-serif;
+  font-family: 'Orbitron', sans-serif;
 `;
 
 const Valid = styled.h5`
@@ -190,7 +190,7 @@ const Section = styled.section`
   min-height: calc(100vh - 50px);
   background-color: #1c1c25;
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -40%;
     left: 60%;
@@ -227,7 +227,7 @@ const CardContent = styled.div`
   transform: 1s;
   backdrop-filter: blur(10px);
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 40px;
     right: 40px;
@@ -236,9 +236,10 @@ const CardContent = styled.div`
     background-color: #fff;
     border-radius: 50%;
     opacity: 0.5;
+    display: ${(p) => (p.backSide ? 'none' : 'unset')};
   }
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 40px;
     right: 80px;
@@ -247,5 +248,6 @@ const CardContent = styled.div`
     background-color: #fff;
     border-radius: 50%;
     opacity: 0.7;
+    display: ${(p) => (p.backSide ? 'none' : 'unset')};
   }
 `;

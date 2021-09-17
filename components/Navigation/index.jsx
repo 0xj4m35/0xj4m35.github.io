@@ -1,16 +1,24 @@
-import React from "react";
-import styled from "styled-components";
-import Link from "next/link";
-import { PATHS } from "../../constants";
+import React from 'react';
+import styled from 'styled-components';
+import Link from 'next/link';
+import { PATHS } from '../../constants';
 
 const Navigation = () => {
   return (
     <StyledNavigation>
-      {PATHS.map((path) => (
-        <Link key={path.path} href={path.path}>
-          <li>{path.label}</li>
-        </Link>
-      ))}
+      {PATHS.map((path) =>
+        path.external ? (
+          <li key={path.path}>
+            <a href={path.path} target='_blank'>
+              {path.label}
+            </a>
+          </li>
+        ) : (
+          <Link key={path.path} href={path.path}>
+            <li>{path.label}</li>
+          </Link>
+        )
+      )}
     </StyledNavigation>
   );
 };
@@ -34,6 +42,10 @@ const StyledNavigation = styled.ul`
     }
     &:not(:last-child) {
       margin-right: 2rem;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
     }
   }
 `;
