@@ -14,14 +14,15 @@ const MyApp = ({ Component, pageProps }) => {
           crossOrigin='anonymous'
         />
         {/* Twitter Card */}
-        <meta content='summary_large_image' name='twitter:card' />
-        <meta content='@james_ng_th' name='twitter:site' />
-        <meta content='The Uranus' name='twitter:title' />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@james_ng_th' />
+        <meta name='twitter:creator' content='@james_ng_th' />
+        <meta name='twitter:title' content='The Uranus' />
         <meta
-          content="The Uranus's personal website."
           name='twitter:description'
+          content="The Uranus's personal website."
         />
-        <meta content='/meta-image.jpg' name='twitter:image' />
+        <meta name='twitter:image' content='/meta-image.jpg' />
         {/* Twitter Card */}
 
         {/* Open Graph*/}
