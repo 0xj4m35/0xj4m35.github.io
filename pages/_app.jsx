@@ -22,7 +22,10 @@ const MyApp = ({ Component, pageProps }) => {
           name='twitter:description'
           content="The Uranus's personal website."
         />
-        <meta name='twitter:image' content='/meta-image.jpg' />
+        <meta
+          name='twitter:image'
+          content='https://theuranus.github.io/meta-image.jpg'
+        />
         {/* Twitter Card */}
 
         {/* Open Graph*/}
