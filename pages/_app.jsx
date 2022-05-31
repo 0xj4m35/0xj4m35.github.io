@@ -17,10 +17,10 @@ const MyApp = ({ Component, pageProps }) => {
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@james_ng_th' />
         <meta name='twitter:creator' content='@james_ng_th' />
-        <meta name='twitter:title' content='The Uranus' />
+        <meta name='twitter:title' content='James Nguyen' />
         <meta
           name='twitter:description'
-          content="The Uranus's personal website."
+          content="James Nguyen's personal website."
         />
         <meta
           name='twitter:image'
@@ -29,9 +29,9 @@ const MyApp = ({ Component, pageProps }) => {
         {/* Twitter Card */}
 
         {/* Open Graph*/}
-        <meta content='The Uranus' property='og:title' />
+        <meta content='James Nguyen' property='og:title' />
         <meta
-          content="The Uranus's personal website."
+          content="James Nguyen's personal website."
           property='og:description'
         />
         <meta content='/meta-image.jpg' property='og:image' />

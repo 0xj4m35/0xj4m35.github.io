@@ -1,7 +1,7 @@
-import CreditCard from "../projects/credit-card";
+import MagicForm from "../projects/magic-form";
 
 const Index = () => {
-  return <CreditCard />;
+  return <MagicForm />;
 };
 
 export default Index;

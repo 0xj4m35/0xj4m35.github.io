@@ -6,7 +6,7 @@ export const PATHS = [
   },
   {
     label: 'Credit Card',
-    path: '/',
+    path: '/credit',
   },
   {
     label: 'Magic Form',
