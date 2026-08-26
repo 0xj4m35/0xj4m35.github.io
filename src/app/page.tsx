@@ -12,6 +12,7 @@ import {
   type Role,
   type SkillGroup,
 } from "@/data/cv";
+import { ContactCopyButton } from "./contact-copy-button";
 
 function Badge({ label }: { label: string }) {
   return <span className="badge">{label}</span>;
@@ -60,9 +61,17 @@ function MetricCard({ metric }: { metric: Metric }) {
   );
 }
 
-function RoleItem({ role, isMinswap = false }: { role: Role; isMinswap?: boolean }) {
+function RoleItem({
+  role,
+  isMinswap = false,
+}: {
+  role: Role;
+  isMinswap?: boolean;
+}) {
   return (
-    <article className={isMinswap ? "role-card role-card-featured" : "role-card"}>
+    <article
+      className={isMinswap ? "role-card role-card-featured" : "role-card"}
+    >
       <div className="item-top">
         <div>
           <h3>{role.company}</h3>
@@ -108,6 +117,31 @@ function ProjectItem({ project }: { project: Project }) {
   );
 }
 
+function ContactRow(p: {
+  href: string;
+  icon: string;
+  label: string;
+  value?: string;
+  copyLabel?: string;
+  external?: boolean;
+}) {
+  return (
+    <div className="contact-row">
+      <a
+        href={p.href}
+        target={p.external ? "_blank" : undefined}
+        rel={p.external ? "noopener noreferrer" : undefined}
+      >
+        <i className={p.icon} aria-hidden="true" />
+        <span>{p.label}</span>
+      </a>
+      {p.copyLabel ? (
+        <ContactCopyButton label={p.copyLabel} value={p.value ?? p.label} />
+      ) : null}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main>
@@ -137,21 +171,41 @@ export default function Home() {
                 Email Me
               </a>
               <a className="btn" href={profile.cvHref}>
-                <i className="ri-download-line" aria-hidden="true" />
-                Download CV
+                View CV Online
+                <i className="ri-external-link-line" aria-hidden="true" />
               </a>
             </div>
           </div>
 
           <aside className="hero-panel" aria-label="Public contact links">
-            <p>Available in Hanoi, Vietnam for senior product engineering roles.</p>
+            <p>
+              Available in Hanoi, Vietnam for senior product engineering roles.
+            </p>
             <div className="contact-list">
-              {publicLinks.map((link) => (
-                <a key={link.href} href={link.href}>
-                  <i className={link.icon} aria-hidden="true" />
-                  <span>{link.label}</span>
-                </a>
-              ))}
+              <ContactRow
+                href={`mailto:${profile.email}`}
+                icon="ri-mail-line"
+                label={profile.email}
+                copyLabel="Copy email"
+              />
+              <ContactRow
+                href={`tel:${profile.phone.replaceAll(" ", "")}`}
+                icon="ri-phone-line"
+                label={profile.phone}
+                value={profile.phone.replaceAll(" ", "")}
+                copyLabel="Copy phone number"
+              />
+              {publicLinks
+                .filter((link) => link.label !== profile.email)
+                .map((link) => (
+                  <ContactRow
+                    key={link.href}
+                    href={link.href}
+                    icon={link.icon}
+                    label={link.label}
+                    external
+                  />
+                ))}
             </div>
           </aside>
         </div>
@@ -224,7 +278,6 @@ export default function Home() {
           </a>
         </div>
       </Section>
-
     </main>
   );
 }

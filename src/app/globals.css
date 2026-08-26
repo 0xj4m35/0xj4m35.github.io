@@ -221,9 +221,17 @@ h1 {
   gap: 12px;
 }
 
-.contact-list a {
+.contact-row {
   display: flex;
   min-width: 0;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-list a {
+  display: inline-flex;
+  min-width: 0;
+  max-width: 100%;
   align-items: center;
   gap: 10px;
   color: var(--fg);
@@ -241,6 +249,48 @@ h1 {
   flex: 0 0 auto;
   color: var(--accent);
   font-size: 18px;
+}
+
+.copy-btn {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    opacity 150ms ease,
+    transform 150ms ease;
+}
+
+.contact-row:hover .copy-btn,
+.contact-row:focus-within .copy-btn,
+.copy-btn.is-copied {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.copy-btn:hover {
+  border-color: rgb(23 107 95 / 0.16);
+  background: rgb(23 107 95 / 0.07);
+  color: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+.copy-btn i {
+  color: currentColor;
+  font-size: 14px;
 }
 
 .section {

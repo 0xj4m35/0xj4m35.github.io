@@ -245,7 +245,7 @@ export const roles: Role[] = [
     title: "Senior Full Stack Developer / Front-end Lead",
     metrics: minswapMetrics,
     points: [
-      "Led frontend engineering for one of Cardano's largest DEX platforms, serving 262K+ active traders, 6.4M+ successful trades, and 10B+ ADA in trading volume.",
+      "Led frontend engineering for Cardano's largest DEX platforms, serving 262K+ active traders, 6.4M+ successful trades, and 10B+ ADA in trading volume.",
       "Built the Minswap frontend application from scratch, establishing the initial architecture, core trading flows, and reusable frontend foundations.",
       "Architected and developed the core trading interface using Next.js, React.js, Jotai, Context API, and Tailwind CSS, with a focus on performance, scalability, and maintainability.",
       "Built advanced trading experiences including TradingView charts, trading terminal platform, Ledger hardware wallet, and CIP-30 wallet integrations.",
