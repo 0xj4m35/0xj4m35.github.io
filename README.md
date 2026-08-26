@@ -1,30 +1,15 @@
 # Nguyen Thai Bao CV
 
-Static CV site built with Next.js App Router, TypeScript, Tailwind CSS, and RemixIcon.
+Personal CV website for Nguyen Thai Bao, a Senior Full Stack Developer focused on scalable web applications, DeFi products, Web3, infrastructure, and AI-assisted engineering workflows.
 
-## Commands
+The site is built as a static Next.js App Router project and deployed with GitHub Pages.
 
-```sh
-pnpm install
-pnpm dev
-pnpm lint
-pnpm build
-```
+## Stack
 
-`pnpm build` exports the site to `out/` for GitHub Pages.
-
-## Deploy
-
-The GitHub Actions workflow deploys on every push to `main` and can also be run manually from the Actions tab.
-
-For the recommended user-site URL, create the GitHub repository as:
-
-```txt
-0xj4m35.github.io
-```
-
-Then enable GitHub Pages with **GitHub Actions** as the source.
-
-## CV Data
-
-Edit [src/data/cv.ts](./src/data/cv.ts) to update CV content.
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Geist fonts
+- Remix Icon
+- pnpm
