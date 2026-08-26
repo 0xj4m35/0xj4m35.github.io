@@ -1,0 +1,8 @@
+{
+  "name": "Nguyen Thai Bao CV",
+  "short_name": "Bao CV",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f4",
+  "theme_color": "#111111"
+}
