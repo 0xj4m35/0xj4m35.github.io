@@ -13,6 +13,7 @@ import {
   type SkillGroup,
 } from "@/data/cv";
 import { ContactCopyButton } from "./contact-copy-button";
+import { ThemeToggle } from "./theme-toggle";
 
 function Badge({ label }: { label: string }) {
   return <span className="badge">{label}</span>;
@@ -149,12 +150,15 @@ export default function Home() {
         <a className="brand" href="#top" aria-label="Back to top">
           {profile.handle}
         </a>
-        <div>
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
+        <div className="nav-actions">
+          <div className="nav-links">
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <ThemeToggle />
         </div>
       </nav>
 
@@ -164,6 +168,7 @@ export default function Home() {
             <p className="eyebrow">{profile.title}</p>
             <p className="handle">{profile.handle}</p>
             <h1>{profile.displayName}</h1>
+            <p className="alt-name">{profile.altName}</p>
             <p className="intro">{profile.intro}</p>
             <div className="actions" aria-label="CV actions">
               <a className="btn primary" href={`mailto:${profile.email}`}>

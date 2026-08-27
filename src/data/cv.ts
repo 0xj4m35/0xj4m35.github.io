@@ -54,6 +54,7 @@ export type Award = {
 export const profile = {
   name: "Nguyen Thai Bao",
   displayName: "Nguyễn Thái Bảo",
+  altName: "James Nguyen",
   handle: "0xj4m35",
   title: "Senior Full Stack Developer",
   location: "Hanoi, Vietnam",

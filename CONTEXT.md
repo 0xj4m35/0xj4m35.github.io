@@ -27,3 +27,7 @@ _Avoid_: Skill category, stack group
 **Project**:
 A significant personal or academic product outside regular employment.
 _Avoid_: Side project, portfolio item
+
+**Theme Mode**:
+The visitor-facing display preference for the CV Site, resolved from the system theme by default and manually toggled between light and dark.
+_Avoid_: Color mode, appearance setting
