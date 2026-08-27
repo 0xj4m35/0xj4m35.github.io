@@ -660,6 +660,111 @@ h3 {
   line-height: 1.2;
 }
 
+.form-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+.magic-shell {
+  display: grid;
+  width: min(100%, 420px);
+}
+
+.magic-card {
+  display: grid;
+  gap: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  background: var(--card-bg);
+  box-shadow: 0 24px 90px var(--shadow);
+}
+
+.magic-title {
+  margin: 8px 0 0;
+  font-size: 44px;
+  line-height: 1;
+}
+
+.magic-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.magic-field {
+  display: grid;
+  gap: 7px;
+}
+
+.magic-field > span:first-child {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.magic-input-wrap {
+  position: relative;
+  display: block;
+}
+
+.magic-input-wrap input {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 0 42px 0 14px;
+  background: var(--btn-bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.magic-input-wrap input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ghost);
+}
+
+.magic-input-wrap input::placeholder {
+  color: var(--subtle);
+}
+
+.magic-ghost-btn {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 0;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.magic-ghost-btn:hover {
+  border-color: var(--accent-line-soft);
+  background: var(--accent-ghost);
+  color: var(--accent-strong);
+}
+
+.magic-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 @media (max-width: 960px) {
   main {
     width: min(100% - 24px, 760px);
@@ -808,6 +913,14 @@ h3 {
 
   .contact-section h3 {
     font-size: 23px;
+  }
+
+  .magic-card {
+    padding: 22px;
+  }
+
+  .magic-title {
+    font-size: 36px;
   }
 }
 
