@@ -75,7 +75,25 @@ function RoleItem({
     >
       <div className="item-top">
         <div>
-          <h3>{role.company}</h3>
+          <h3 className="role-company">
+            <span>{role.company}</span>
+            {role.product ? (
+              <>
+                <span aria-hidden="true">|</span>
+                {role.product.href ? (
+                  <a
+                    href={role.product.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {role.product.label}
+                  </a>
+                ) : (
+                  <span>{role.product.label}</span>
+                )}
+              </>
+            ) : null}
+          </h3>
           <p>{role.title}</p>
         </div>
         <span>{role.period}</span>

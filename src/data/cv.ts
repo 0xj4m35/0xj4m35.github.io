@@ -32,6 +32,10 @@ export type Metric = {
 
 export type Role = {
   company: string;
+  product?: {
+    label: string;
+    href?: string;
+  };
   period: string;
   title: string;
   points: string[];
@@ -213,6 +217,11 @@ export const skills: SkillGroup[] = [
 
 export const minswapMetrics: Metric[] = [
   {
+    label: "Peak TVL",
+    value: "$ 180M+",
+    note: "secured across Cardano DeFi liquidity",
+  },
+  {
     label: "Active traders",
     value: "262K+",
     note: "served by Cardano DEX platforms",
@@ -228,20 +237,19 @@ export const minswapMetrics: Metric[] = [
     note: "supported across high-volume DeFi workloads",
   },
   {
-    label: "Bundle size",
-    value: "50%",
-    note: "reduction from architecture and flow optimization",
-  },
-  {
-    label: "Build time",
-    value: "7.5x",
-    note: "reduced from 5 minutes to 40 seconds",
+    label: "MAU",
+    value: "90K+",
+    note: "supported through peak monthly usage",
   },
 ];
 
 export const roles: Role[] = [
   {
     company: "Minswap",
+    product: {
+      label: "minswap.org",
+      href: "https://minswap.org",
+    },
     period: "Dec 2021 - Jul 2026",
     title: "Senior Full Stack Developer / Front-end Lead",
     metrics: minswapMetrics,
@@ -304,6 +312,9 @@ export const roles: Role[] = [
   },
   {
     company: "BraveBits Company",
+    product: {
+      label: "PageFly",
+    },
     period: "Oct 2018 - Sep 2020",
     title: "Intern & Front-end Developer",
     points: [
